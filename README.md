@@ -28,4 +28,4 @@ Once finished, after a restart you should see the lightwhale login prompt and ca
     - NOTE: This is particularly important because unless your VPS has a firewall, by default Lightwhale exposes SSH with password auth
  3. **Install SSH public key:** Install your local key via `ssh-copy-id op@<public-ip>` and entering the password you just assigned. You can get your public IP in the VPS console or `curl http://ipinfo.io`
  4. **Harden SSH:** Set `PasswordAuthentication no` and optionally choose a custom random port for SSH via `Port 12345` within `/etc/ssh/sshd_config`. Reload via `/etc/init.d/S50sshd reload`. Update your `~/.ssh/config` with this port or specify it via `ssh op@<public-ip> -p 12345`
- 5. **Customize Hostname:** `hostname my-server-name`
+ 5. **Customize Hostname:** `sudo setup-hostname my-server-name`
